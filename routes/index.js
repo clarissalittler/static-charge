@@ -14,11 +14,10 @@ fs.readdir(__dirname + '/../posts', function(error, directoryContents) {
 
   directoryContents.forEach(function(postFileName) {
     var postName = postFileName.replace('.jade', '');
-    console.log("Creating a route for " + postName);
     router.get('/' + postName, function(request, response) {
       response.render('../posts/' + postFileName, {});
-    })
-  })
+    });
+  });
 });
 
 module.exports = router;
