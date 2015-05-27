@@ -1,5 +1,10 @@
 extends layout
 
-block content
+block content  
   != postContents
+  ul 
+    each val in postChildren
+      li 
+        a(href=val)
+          = val
 
